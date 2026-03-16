@@ -1,0 +1,26 @@
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.aarch64
+
+DEFCONFIG="rock_gki_defconfig"
+GKI_FRAGMENT_DEFCONFIG="${KERNEL_DIR}/arch/arm64/configs/rock_gki.fragment"
+PRE_DEFCONFIG_CMDS="KCONFIG_CONFIG=${ROOT_DIR}/${KERNEL_DIR}/arch/arm64/configs/${DEFCONFIG} ${ROOT_DIR}/${KERNEL_DIR}/scripts/kconfig/merge_config.sh -m -r ${ROOT_DIR}/${KERNEL_DIR}/arch/arm64/configs/gki_defconfig ${ROOT_DIR}/${GKI_FRAGMENT_DEFCONFIG}"
+POST_DEFCONFIG_CMDS="rm ${ROOT_DIR}/${KERNEL_DIR}/arch/arm64/configs/${DEFCONFIG}"
+
+MTK_PLATFORM=mt6789
+BUILD_TARGET_PRODUCT=rock
+TARGET_BUILD_VARIANT=rock
+
+FILES="
+arch/arm64/boot/Image.gz
+arch/arm64/boot/dts/mediatek/mt6789.dtb
+"
+
+# Strip kernel modules
+DO_NOT_STRIP_MODULES=0
+
+MAKE_GOALS="${MAKE_GOALS} Image.gz dtbs"
+
+ABI_OUT_TAG="mtk"
+KMI_SYMBOL_LIST=android/abi_gki_aarch64_mtk
+GKI_MODULES_LIST=android/gki_aarch64_modules
+ABI_DEFINITION=android/abi_gki_aarch64.xml

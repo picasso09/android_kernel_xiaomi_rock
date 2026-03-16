@@ -11,7 +11,7 @@
 #define DIVIDE_RATIO(value) ((value)/1000)
 
 struct mmqos_hrt *mmqos_hrt;
-static bool disp_report_bw;
+static bool __maybe_unused disp_report_bw;
 
 static u32 mmqos_log_hrt_level;
 enum mmqos_log_hrt_level {
@@ -96,11 +96,6 @@ s32 mtk_mmqos_set_hrt_bw(enum hrt_type type, u32 bw)
 		if (mmqos_log_hrt_level & 1 << log_hrt_bw)
 			pr_notice("%s: type=%d bw=%d\n", __func__, type, bw);
 	}
-	if (unlikely(!disp_report_bw) && type == HRT_DISP) {
-		disp_report_bw = true;
-		mtk_mmdvfs_debug_release_step0();
-	}
-
 	return 0;
 }
 EXPORT_SYMBOL_GPL(mtk_mmqos_set_hrt_bw);

@@ -10,6 +10,7 @@
 #include <linux/of.h>
 
 #include "hf_manager.h"
+#include <linux/timekeeping.h>
 
 #define LSM6DSM_SECONDARY_NAME "lsm6dsm_secondary"
 
@@ -36,7 +37,7 @@ struct lsm6dsm_device {
 	uint32_t direction;
 };
 
-static sensor_info support_sensors[] = {
+static struct sensor_info support_sensors[] = {
 	.sensor_type = SENSOR_TYPE_GYRO_SECONDARY,
 	.gain = 1,
 	.name = {'a', 'c', 'c', 'e', 'l'},
