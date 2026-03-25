@@ -246,7 +246,7 @@
 #define REVERSE_CHG_DRP					0X03
 #define REVERSE_CHG_TEST				0X04
 
-extern mtk_usb_extcon_set_role(struct mtk_extcon_info *extcon, unsigned int role);
+int extern mtk_usb_extcon_set_role(struct mtk_extcon_info *extcon, unsigned int role);
 extern struct mtk_extcon_info *extcon_usb;
 
 uint8_t     typec_cc_orientation;

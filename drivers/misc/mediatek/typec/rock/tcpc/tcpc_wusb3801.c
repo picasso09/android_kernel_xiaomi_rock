@@ -246,7 +246,7 @@ static int test_cc_patch(struct wusb3801_chip *chip)
 /*L19AT code for HQ-248674 by zhaohan at 2022/11/14 start*/
 //static int first_check_flag;
 /*L19AT code for HQ-248674 by zhaohan at 2022/11/14 end*/
-extern mtk_usb_extcon_set_role(struct mtk_extcon_info *extcon, unsigned int role);
+int extern mtk_usb_extcon_set_role(struct mtk_extcon_info *extcon, unsigned int role);
 extern struct mtk_extcon_info *extcon_usb;
 static void wusb3801_irq_work_handler(struct kthread_work *work)
 {
