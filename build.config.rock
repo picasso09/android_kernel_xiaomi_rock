@@ -12,6 +12,7 @@ TARGET_BUILD_VARIANT=rock
 
 FILES="
 arch/arm64/boot/Image.gz
+arch/arm64/boot/dts/mediatek/rock.dtb
 arch/arm64/boot/dts/mediatek/mt6789.dtb
 "
 
