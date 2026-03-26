@@ -13,6 +13,7 @@
 #include <linux/sched/clock.h>
 #include <linux/rpmsg.h>
 #include <linux/rpmsg/mtk_rpmsg.h>
+#include <linux/rpmsg/mtk_rpmsg_mbox.h>
 #include <linux/soc/mediatek/mtk-mbox.h>
 #include <linux/soc/mediatek/mtk_tinysys_ipi.h>
 

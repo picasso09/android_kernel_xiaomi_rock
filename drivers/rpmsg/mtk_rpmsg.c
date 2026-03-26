@@ -26,12 +26,12 @@ struct mtk_rpmsg_rproc_subdev {
 
 #define to_mtk_subdev(d) container_of(d, struct mtk_rpmsg_rproc_subdev, subdev)
 
-struct mtk_rpmsg_channel_info {
+/**struct mtk_rpmsg_channel_info {
 	struct rpmsg_channel_info info;
 	bool registered;
 	struct list_head list;
 };
-
+*/
 /**
  * struct rpmsg_ns_msg - dynamic name service announcement message
  * @name: name of remote service that is published
@@ -47,7 +47,7 @@ struct rpmsg_ns_msg {
 	u32 addr;
 } __packed;
 
-struct mtk_rpmsg_device {
+/**struct mtk_rpmsg_device {
 	struct rpmsg_device rpdev;
 	struct mtk_rpmsg_rproc_subdev *mtk_subdev;
 };
@@ -56,7 +56,7 @@ struct mtk_rpmsg_endpoint {
 	struct rpmsg_endpoint ept;
 	struct mtk_rpmsg_rproc_subdev *mtk_subdev;
 };
-
+*/
 #define to_mtk_rpmsg_device(r) container_of(r, struct mtk_rpmsg_device, rpdev)
 #define to_mtk_rpmsg_endpoint(r) container_of(r, struct mtk_rpmsg_endpoint, ept)
 
