@@ -453,6 +453,5 @@
 };
  /* Huaqin modify for HQ-193847 by liunianliang at 2022/03/25 end */
 #include "mediatek/cust_rock_fingerprint.dtsi"
-#include <rock/cust.dtsi>
 /*End of this file, DO NOT ADD ANYTHING HERE*/
-
+	
