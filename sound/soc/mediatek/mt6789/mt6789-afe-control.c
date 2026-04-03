@@ -76,6 +76,10 @@ static unsigned int dai_memif_rate_transform(struct device *dev,
 		return MTK_AFE_DAI_MEMIF_RATE_32K;
 	case 48000:
 		return MTK_AFE_DAI_MEMIF_RATE_48K;
+	case 96000:
+	    return MTK_AFE_DAI_MEMIF_RATE_96K;
+	case 192000:
+		return MTK_AFE_DAI_MEMIF_RATE_192K;
 	default:
 		dev_warn(dev, "%s(), rate %u invalid, use %d!!!\n",
 			 __func__,
@@ -96,6 +100,10 @@ static unsigned int pcm_rate_transform(struct device *dev,
 		return MTK_AFE_PCM_RATE_32K;
 	case 48000:
 		return MTK_AFE_PCM_RATE_48K;
+	case 96000:
+	    return MTK_AFE_PCM_RATE_96K;
+	case 192000:
+		return MTK_AFE_PCM_RATE_192K;
 	default:
 		dev_warn(dev, "%s(), rate %u invalid, use %d!!!\n",
 			 __func__,

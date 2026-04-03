@@ -251,7 +251,10 @@ static const struct snd_soc_dai_ops mtk_dai_pcm_ops = {
 #define MTK_PCM_RATES (SNDRV_PCM_RATE_8000 |\
 		       SNDRV_PCM_RATE_16000 |\
 		       SNDRV_PCM_RATE_32000 |\
-		       SNDRV_PCM_RATE_48000)
+		       SNDRV_PCM_RATE_48000 |\
+			   SNDRV_PCM_RATE_96000 |\
+			   SNDRV_PCM_RATE_176400 |\
+			   SNDRV_PCM_RATE_192000)
 
 #define MTK_PCM_FORMATS (SNDRV_PCM_FMTBIT_S16_LE |\
 			 SNDRV_PCM_FMTBIT_S24_LE |\
